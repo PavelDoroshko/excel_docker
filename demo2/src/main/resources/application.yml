@@ -1,0 +1,17 @@
+server:
+  port: 8003
+  servlet:
+    context-path: /demo
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database-platform:  org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+   url: jdbc:postgresql://db:5432/tdb
+   driver-class-name: org.postgresql.Driver
+   username:  postgres
+   password:  postgres
+
+

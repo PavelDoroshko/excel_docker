@@ -1,0 +1,22 @@
+ version: '3.3'
+
+ services:
+  demo2:
+    container_name: demo2
+    build: ./demo2
+    image: demo2
+    depends_on:
+    - db
+    ports:
+    - "8003:8003"
+
+  db:
+    hostname: db
+    image: postgres:13.4-alpine
+    env_file:
+    - database/database.env
+    ports:
+    - "5433:5432"
+    volumes:
+    - ./database/db.sql:/docker-entrypoint-initdb.d/db.sql
+    - ./database/db:/var/lib/postgresql/db/
