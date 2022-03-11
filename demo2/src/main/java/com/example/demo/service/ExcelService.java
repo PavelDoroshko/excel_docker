@@ -94,7 +94,12 @@ new File ("d:/first.xlsx"));
         workbook.write(out);
         out.close();
 */
-return workbook;
+       for (int columnIndex = 0; columnIndex < 4; columnIndex++) {
+            spreadsheet.autoSizeColumn(columnIndex);
+        }
+        return workbook;
+
+
     }
 
     public ByteArrayResource export(Long id) throws IOException {
