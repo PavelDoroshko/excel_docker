@@ -20,8 +20,6 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private int count;
-
     private Integer age;
 
     @Override
@@ -39,7 +37,7 @@ public class Person {
 
     private String surName;
 
-    @OneToMany(mappedBy = "person",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "person",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Cat> cats;
 
     public Long getId() {
