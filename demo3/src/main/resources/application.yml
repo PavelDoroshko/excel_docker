@@ -1,10 +1,10 @@
 server:
-  port: 8003
+  port: 8004
   servlet:
-    context-path: /demo
+    context-path: /demodemo
 spring:
   application:
-    name: demo2
+    name: demo3
   jpa:
     hibernate:
       ddl-auto: none
@@ -20,4 +20,4 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    instance-id: demo2-instance
+    instance-id: demo3-instance

@@ -3,23 +3,30 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
-    <modules>
-        <module>demo2</module>
-    </modules>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.2</version>
+        <version>2.3.1.RELEASE</version>
     </parent>
     <groupId>com.example</groupId>
     <artifactId>demo1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>demo1</name>
     <description>demo1</description>
+
     <properties>
         <java.version>11</java.version>
         <poi.version>5.2.0</poi.version>
-    </properties>
+        <spring-cloud.version>Hoxton.SR5</spring-cloud.version>
+      </properties>
+
+    <modules>
+        <module>demo2</module>
+        <module>eurika_discavery</module>
+        <module>demo3</module>
+    </modules>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
