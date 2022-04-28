@@ -13,29 +13,22 @@ import java.net.URI;
 
 @RestController
 public class EurekaController {
-    private  final RestTemplate restTemplate;
-    private  final EurekaClient client;
+    private final RestTemplate restTemplate;
+    private final EurekaClient client;
 
     public EurekaController(RestTemplate restTemplate, EurekaClient client) {
         this.restTemplate = restTemplate;
         this.client = client;
     }
 
-
-
-
-
-
-
-
     @GetMapping("demo2/dogdog")
     public String dog() {
 
 
         Applications applications = client.getApplications();
-applications.getRegisteredApplications("demo3").getName();
+        applications.getRegisteredApplications("demo3").getName();
         String homeUrl = applications.getRegisteredApplications("demo3").getInstances().get(0).getHomePageUrl();
-        System.out.println( applications.getRegisteredApplications("demo3").getInstances().get(0).getHomePageUrl());
+        System.out.println(applications.getRegisteredApplications("demo3").getInstances().get(0).getHomePageUrl());
         String forObject = restTemplate.getForObject(homeUrl + "demodemo/dog", String.class);
         return forObject;
 
