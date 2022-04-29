@@ -7,8 +7,30 @@
     image: demo2
     depends_on:
     - db
+    - eurika_discavery
     ports:
     - "8003:8003"
+    environment:
+      - EUREKA_HOST=http://eurika_discavery:8761/eureka/
+
+  demo3:
+    container_name: demo3
+    build: ./demo3
+    image: demo3
+    depends_on:
+      - eurika_discavery
+    ports:
+      - "8004:8004"
+    environment:
+      - EUREKA_HOST=http://eurika_discavery:8761/eureka/
+
+  eurika_discavery:
+    container_name: eurika_discavery
+    image: eurika_discavery
+    ports:
+      - "8761:8761"
+    environment:
+      - EUREKA_HOST=http://eurika_discavery:8761/eureka/
 
   db:
     hostname: db

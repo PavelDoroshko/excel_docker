@@ -11,13 +11,13 @@ spring:
     show-sql: true
     database-platform:  org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    url: jdbc:postgresql://localhost:5433/tdb
+    url: jdbc:postgresql://db:5432/tdb
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: postgres
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_HOST:http://localhost:8761/eureka/}
   instance:
     instance-id: demo2-instance

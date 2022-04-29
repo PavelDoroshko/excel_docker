@@ -1,6 +1,6 @@
 package com.example.demo.config;
 
-import com.netflix.discovery.DiscoveryClient;
+//import com.netflix.discovery.DiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
