@@ -9,8 +9,8 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.1.RELEASE</version>
     </parent>
-    <groupId>com.example</groupId>
     <artifactId>demo1</artifactId>
+    <groupId>com.example</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <name>demo1</name>
     <description>demo1</description>
@@ -25,6 +25,7 @@
         <module>demo2</module>
         <module>eurika_discavery</module>
         <module>demo3</module>
+        <module>logging-starter</module>
     </modules>
 
     <dependencies>

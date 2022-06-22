@@ -5,19 +5,39 @@ server:
 spring:
   application:
     name: demo3
-#  jpa:
-#    hibernate:
-#      ddl-auto: none
-#    show-sql: true
-#    database-platform:  org.hibernate.dialect.PostgreSQLDialect
-#  datasource:
-#    url: jdbc:postgresql://localhost:5433/tdb
-#    driver-class-name: org.postgresql.Driver
-#    username: postgres
-#    password: postgres
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_HOST:http://localhost:8761/eureka/}
-  instance:
-    instance-id: demo3-instance
+  #  jpa:
+  #    hibernate:
+  #      ddl-auto: none
+  #    show-sql: true
+  #    database-platform:  org.hibernate.dialect.PostgreSQLDialect
+  #  datasource:
+  #    url: jdbc:postgresql://localhost:5433/tdb
+  #    driver-class-name: org.postgresql.Driver
+  #    username: postgres
+  #    password: postgres
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: test
+    password: test
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+logging:
+   level:
+    org.springframework:
+                 web.filter: ${COMMONS_REQUEST_LOGGING_FILTER:DEBUG}
+example:
+   logging:
+      message-prefix: service >
+      payload:
+            max-length: 90
+      enabled: true
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: ${EUREKA_HOST:http://localhost:8761/eureka/}
+#  instance:
+#    instance-id: demo3-instance

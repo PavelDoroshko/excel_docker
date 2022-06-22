@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.model.Cat;
 import com.example.demo.model.Person;
+import com.example.demo.model.Cat;
 import lombok.SneakyThrows;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -12,8 +12,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
 
@@ -26,7 +24,7 @@ public class ExcelService {
         this.personService = personService;
     }
 @Transactional
-    Person getPerson(Long id) {
+Person getPerson(Long id) {
         Person person = personService.readOne(id);
         return person;
     }
